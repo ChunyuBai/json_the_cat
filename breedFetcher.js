@@ -3,15 +3,15 @@ const catName = process.argv[2];
 const url = "https://api.thecatapi.com/v1/breeds/search?q=" + catName;
 request(url,(error,response,body) => {
   const data = JSON.parse(body);
-  if(error){
+  if (error) {
     console.log(error);
     return;
   }
-  if(!catName){
+  if (!catName) {
     console.log(`please enter a cat name`);
     return;
   }
-  if(!data[0]){
+  if (!data[0]) {
     console.log(`please enter a correct cat name`);
     return;
   }
@@ -20,4 +20,4 @@ request(url,(error,response,body) => {
   // }
   console.log(data[0].description);
   // console.log(typeof data);
-})
+});
